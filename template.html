@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test App</title>
+  <meta charset="utf-8">
+</head>
+<body>
+
+  <form method="POST" action="/searchByName">
+	Введите имя: <input type="text" name="name">
+    <input type="submit" value="Искать">
+  </form>
+
+  <table><tbody>
+  <tr>
+    <th>ID платежа</th>
+    <th>Имя клиента</th>
+    <th>Сумма</th>
+    <th>Дата зачисления</th>
+  </tr>
+  %for i in result:
+  <tr>
+    <th>{{str(i[0])}}</th>
+    <th>{{str(i[1])}}</th>
+    <th>{{str(i[2])}}</th>
+    <th>{{str(i[3])}}</th>
+  </tr>
+  %end
+  </tbody></table>
+</body>
+</html>
